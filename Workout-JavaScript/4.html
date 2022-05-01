@@ -1,0 +1,20 @@
+<html>
+    <head>  
+    </head>
+    <body>
+	<h3>Count occurrence in a string</h3>
+        Enter Lines:<br/>
+        <textarea rows="10" cols="30" id="a"></textarea><br/><br/>
+        <input type="text" id="s">
+	<button onClick="gfg()">Search</button><br/><br/>
+	Count:<p id="demo"></p>
+	<script>
+	function gfg() 
+        {
+	var text=document.getElementById("a").value;
+        var search=document.getElementById("s").value;
+	document.getElementById("demo").innerHTML=(text.match(search)).length;
+	}
+	</script>
+    </body>
+</html>

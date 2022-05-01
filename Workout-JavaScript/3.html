@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>User Registration Form</title>
+    </head>
+    <body>
+        <form>
+        Valid pincode:<span id="demo"></span><br/>
+        Valid state:<span id="demo1"></span><br/>
+        Valid email:<span id="demo2"></span><br/>
+        First Name:<input type="text" name="fname" required><br/>
+        Last Name: <input type="text" name="lname" required><br/>
+        Address:<br/>
+        <textarea rows="10" cols="30"></textarea><br/>
+        City:<input type="text" required><br/>
+        State:<input type="text" id="s"><br/>
+        Country:<input type="text" required><br/>
+        Pincode:<input type="text" id="p"><br/>
+        Email:<input type="email" id="e"><br/>
+        Username:<input type="text" required><br/>
+        Password:<input type="password" required><br/>
+        </form> 
+        <button type="button" onsubmit="validate()">Submit</button><br/>
+       
+        <script>
+        function validate()
+        {
+            var a=document.getElementById("p").value;
+            if(a>6)
+            {
+                document.getElementById("demo").innerHTML="Wrong Input!";
+            }   
+            var b=document.getElementById("s").value;
+            if(b>2)
+            {
+                document.getElementById("demo1").innerHTML="Wrong Input!";
+            }
+            var c=document.getElementById("e").value;
+            if(c<6)
+            {
+                document.getElementById("demo2").innerHTML="False";
+                pattern=/[a-z]+\@[a-z]+\.[a-z]{2,3}/;
+                document.getElementById("demo2").innerHTML=pattern.test(c);
+            }
+            else
+            {
+                document.getElementById("demo2").innerHTML="True";
+            }
+        }
+        </script>
+    </body>
+</html>
